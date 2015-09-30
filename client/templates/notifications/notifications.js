@@ -1,11 +1,10 @@
 Template.notifications.helpers({
   notifications: function() {
     return Notifications.find({userId: Meteor.userId(), read: false});
+  },
+  notificationCount: function(){
+  	return Notifications.find({userId: Meteor.userId(), read: false}).count();
   }
-  /*
-	Exercise 3 - part 1: 
-	add a notificationCount helper which returns the total amount of unread messages for the current user
-  */
 });
 
 Template.notificationItem.helpers({
